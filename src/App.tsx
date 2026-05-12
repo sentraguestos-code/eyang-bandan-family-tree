@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Network, Map, Plus, Home, Menu, X, BookOpen, Images } from 'lucide-react';
+import { Network, Map, Plus, Home, Menu, X, BookOpen, Images, Printer } from 'lucide-react';
 import LandingPage from './pages/LandingPage';
 import TreeExplorer from './pages/TreeExplorer';
 import FamilyMap from './pages/FamilyMap';
@@ -9,6 +9,7 @@ import AddMemberForm from './pages/AddMemberForm';
 import EditMemberForm from './pages/EditMemberForm';
 import AboutPage from './pages/AboutPage';
 import GalleryPage from './pages/GalleryPage';
+import PrintPage from './pages/PrintPage';
 
 function Navigation() {
   const location = useLocation();
@@ -31,6 +32,7 @@ function Navigation() {
     { path: '/tree', label: 'Pohon Keluarga', icon: Network },
     { path: '/map', label: 'Peta Sebaran', icon: Map },
     { path: '/gallery', label: 'Galeri', icon: Images },
+    { path: '/print', label: 'Cetak PDF', icon: Printer },
     { path: '/add', label: 'Tambah Anggota', icon: Plus },
     { path: '/about', label: 'Tentang', icon: BookOpen },
   ];
@@ -135,6 +137,7 @@ function App() {
             <Route path="/tree" element={<TreeExplorer />} />
             <Route path="/map" element={<FamilyMap />} />
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/print" element={<PrintPage />} />
             <Route path="/add" element={<AddMemberForm />} />
             <Route path="/edit/:id" element={<EditMemberForm />} />
             <Route path="/about" element={<AboutPage />} />
