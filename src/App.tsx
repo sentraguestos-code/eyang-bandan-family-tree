@@ -150,7 +150,7 @@ function App() {
               "Keturunan adalah amanah, silsilah adalah jembatan mengenang."
             </p>
             <p className="text-stone-600 text-xs">
-              © 2024 Eyang Bandan Family Tree · Dibangun dengan ❤️ untuk keluarga
+              © 2026 Eyang Bandan Family Tree · Dibangun oleh Lucky Zamaludin Malik
             </p>
           </div>
         </footer>
