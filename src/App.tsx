@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Network, Map, Plus, Home, Menu, X, BookOpen, TreePine } from 'lucide-react';
+import { Network, Map, Plus, Home, Menu, X, BookOpen } from 'lucide-react';
 import LandingPage from './pages/LandingPage';
 import TreeExplorer from './pages/TreeExplorer';
 import FamilyMap from './pages/FamilyMap';
@@ -45,8 +45,8 @@ function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 bg-gradient-to-br from-amber-500 to-amber-700 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-amber-500/30 transition-shadow">
-              <TreePine className="w-5 h-5 text-white" />
+            <div className="w-9 h-9 rounded-xl overflow-hidden flex-shrink-0 shadow-lg group-hover:shadow-amber-500/30 transition-shadow">
+              <img src="/Logo.png" alt="Eyang Bandan" className="w-full h-full object-cover" />
             </div>
             <div className="hidden sm:block">
               <p className="text-white font-bold text-sm leading-tight">Eyang Bandan</p>
@@ -141,8 +141,8 @@ function App() {
         <footer className="bg-stone-900 border-t border-stone-800 py-10 mt-16">
           <div className="max-w-7xl mx-auto px-4 text-center">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-amber-700 rounded-lg flex items-center justify-center">
-                <TreePine className="w-4 h-4 text-white" />
+              <div className="w-10 h-10 rounded-xl overflow-hidden shadow-md">
+                <img src="/Logo.png" alt="Eyang Bandan" className="w-full h-full object-cover" />
               </div>
               <span className="text-white font-bold">Eyang Bandan Family Tree</span>
             </div>

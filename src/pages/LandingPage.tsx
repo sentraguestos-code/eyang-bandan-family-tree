@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Network, Users, MapPin, ArrowRight, Plus, BookOpen, TreePine, Sparkles } from 'lucide-react';
+import { Network, Users, MapPin, ArrowRight, Plus, BookOpen, TreePine } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { fetchFamilyStats, fetchRootMember } from '../lib/familyData';
 import type { FamilyStats } from '../types/family';
@@ -54,10 +54,9 @@ export default function LandingPage() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-medium px-4 py-2 rounded-full mb-8"
+              className="w-28 h-28 rounded-full overflow-hidden shadow-2xl border-4 border-amber-500/30 mx-auto mb-6"
             >
-              <Sparkles className="w-4 h-4" />
-              Silsilah Keluarga Digital
+              <img src="/Logo.png" alt="Eyang Bandan" className="w-full h-full object-cover" />
             </motion.div>
 
             <motion.h1
