@@ -55,8 +55,8 @@ export default function AboutPage() {
       >
         {[
           { icon: Users, value: '11', label: 'Anak Eyang Bandan', color: 'from-amber-500 to-amber-700' },
-          { icon: Calendar, value: '2017', label: 'Silaturahmi Ke-2', color: 'from-stone-500 to-stone-700' },
-          { icon: TreePine, value: '1.147', label: 'Total Keturunan (2017)', color: 'from-emerald-500 to-emerald-700' },
+          { icon: Calendar, value: '2024', label: 'Silaturahmi Ke-3', color: 'from-stone-500 to-stone-700' },
+          { icon: TreePine, value: '1.147+', label: 'Total Keturunan (2024)', color: 'from-emerald-500 to-emerald-700' },
         ].map((s, i) => (
           <motion.div
             key={i}

@@ -259,8 +259,8 @@ export default function LandingPage() {
                 dikaruniai <span className="text-amber-400 font-semibold">11 anak</span> — 5 laki-laki dan 6 perempuan.
               </p>
               <p className="text-stone-300 leading-relaxed mb-8">
-                Berdasarkan data Silaturahmi Keluarga ke-2 tahun 2017, keturunan Eyang Bandan
-                berjumlah <span className="text-amber-400 font-bold text-xl">1.147 orang</span>.
+                Berdasarkan data Silaturahmi Keluarga ke-3 tahun 2024, keturunan Eyang Bandan
+                berjumlah <span className="text-amber-400 font-bold text-xl">1.147+ orang</span>.
               </p>
 
               <Link
