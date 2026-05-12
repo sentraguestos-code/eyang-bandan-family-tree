@@ -70,6 +70,11 @@ function TreeNode({ member, expandedIds, selectedId, onToggle, onSelect, level }
                     <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-md text-white ${colors.badge}`}>
                       Gen {member.generation}
                     </span>
+                    {member.child_order != null && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded-md bg-stone-100 text-stone-500 font-medium">
+                        Anak ke-{member.child_order}
+                      </span>
+                    )}
                     {member.death_date && (
                       <span className="text-[10px] text-stone-400 italic bg-stone-100 px-1.5 py-0.5 rounded-md">Alm.</span>
                     )}

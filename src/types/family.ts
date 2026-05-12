@@ -11,6 +11,7 @@ export interface FamilyMember {
   parent_id: string | null;
   generation: number;
   gender?: 'male' | 'female' | null;
+  child_order?: number | null;
   created_at: string;
   updated_at: string;
   // joined from children query

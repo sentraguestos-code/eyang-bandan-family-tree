@@ -28,6 +28,7 @@ export default function EditMemberForm() {
     location_lat: '',
     location_lng: '',
     photo_url: '',
+    child_order: '',
   });
 
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
@@ -50,6 +51,7 @@ export default function EditMemberForm() {
           location_lat: m.location_lat?.toString() ?? '',
           location_lng: m.location_lng?.toString() ?? '',
           photo_url: m.photo_url ?? '',
+          child_order: m.child_order?.toString() ?? '',
         });
         if (m.photo_url) setPhotoPreview(m.photo_url);
       } finally {
@@ -110,6 +112,7 @@ export default function EditMemberForm() {
         location_lat: form.location_lat ? parseFloat(form.location_lat) : null,
         location_lng: form.location_lng ? parseFloat(form.location_lng) : null,
         photo_url: form.photo_url || null,
+        child_order: form.child_order ? parseInt(form.child_order) : null,
       });
       setStatus('success');
       setTimeout(() => navigate('/tree'), 1500);
@@ -204,6 +207,24 @@ export default function EditMemberForm() {
               required
             />
           </div>
+
+          {/* Child order */}
+          {member.parent_id && (
+            <div>
+              <label className="block text-sm font-semibold text-stone-700 mb-2">
+                Anak Ke- <span className="text-stone-400 font-normal">(urutan di antara saudara)</span>
+              </label>
+              <input
+                type="number"
+                min="1"
+                value={form.child_order}
+                onChange={(e) => setForm((f) => ({ ...f, child_order: e.target.value }))}
+                placeholder="Contoh: 1, 2, 3 ..."
+                className="w-full px-4 py-3 rounded-xl border-2 border-stone-200 focus:border-amber-500 focus:ring-4 focus:ring-amber-100 outline-none transition-all"
+              />
+              <p className="text-xs text-stone-400 mt-1">Urutan anak dari orang tuanya. Anak pertama isi 1, anak ketiga isi 3.</p>
+            </div>
+          )}
 
           <div>
             <label className="block text-sm font-semibold text-stone-700 mb-2">Jenis Kelamin</label>

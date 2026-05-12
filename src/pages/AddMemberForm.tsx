@@ -29,6 +29,7 @@ export default function AddMemberForm() {
     location_lng: '',
     parent_id: parentIdParam ?? '',
     photo_url: '',
+    child_order: '',
   });
 
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
@@ -126,6 +127,7 @@ export default function AddMemberForm() {
         parent_id: form.parent_id || null,
         photo_url: form.photo_url || null,
         generation,
+        child_order: form.child_order ? parseInt(form.child_order) : null,
       });
 
       setStatus('success');
@@ -284,6 +286,24 @@ export default function AddMemberForm() {
               required
             />
           </div>
+
+          {/* Child order */}
+          {!isRoot && (
+            <div>
+              <label className="block text-sm font-semibold text-stone-700 mb-2">
+                Anak Ke- <span className="text-stone-400 font-normal">(urutan di antara saudara)</span>
+              </label>
+              <input
+                type="number"
+                min="1"
+                value={form.child_order}
+                onChange={(e) => setForm((f) => ({ ...f, child_order: e.target.value }))}
+                placeholder="Contoh: 1, 2, 3 ..."
+                className="w-full px-4 py-3 rounded-xl border-2 border-stone-200 focus:border-amber-500 focus:ring-4 focus:ring-amber-100 outline-none transition-all"
+              />
+              <p className="text-xs text-stone-400 mt-1">Isi angka urutan anak dari orang tuanya. Contoh: anak pertama isi 1, anak ketiga isi 3.</p>
+            </div>
+          )}
 
           {/* Gender */}
           <div>
