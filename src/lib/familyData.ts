@@ -8,7 +8,7 @@ export async function fetchAllMembers(): Promise<FamilyMember[]> {
     .from('family_members')
     .select('*')
     .order('generation', { ascending: true })
-    .order('name', { ascending: true });
+    .order('created_at', { ascending: true });
 
   if (error) throw error;
   return data ?? [];
@@ -132,6 +132,7 @@ export async function deleteMember(id: string): Promise<void> {
 
 export function buildTree(members: FamilyMember[]): FamilyMember | null {
   const map = new Map<string, FamilyMember>();
+  // members sudah diurutkan by created_at dari fetchAllMembers
   members.forEach((m) => map.set(m.id, { ...m, children: [] }));
 
   let root: FamilyMember | null = null;
@@ -144,6 +145,7 @@ export function buildTree(members: FamilyMember[]): FamilyMember | null {
       if (parent) {
         parent.children = parent.children ?? [];
         parent.children.push(member);
+        // urutan sudah terjaga karena members diiterasi sesuai created_at
       }
     }
   });
