@@ -24,13 +24,18 @@ function TreeNode({ member, expandedIds, selectedId, onToggle, onSelect, level }
   const childCount = member.children?.length ?? 0;
 
   const genColors: Record<number, { bg: string; badge: string; border: string }> = {
-    1: { bg: 'from-amber-50 to-orange-50', badge: 'bg-amber-700', border: 'border-amber-300' },
-    2: { bg: 'from-stone-50 to-slate-50', badge: 'bg-stone-600', border: 'border-stone-300' },
-    3: { bg: 'from-emerald-50 to-teal-50', badge: 'bg-emerald-600', border: 'border-emerald-300' },
-    4: { bg: 'from-blue-50 to-indigo-50', badge: 'bg-blue-600', border: 'border-blue-300' },
-    5: { bg: 'from-purple-50 to-violet-50', badge: 'bg-purple-600', border: 'border-purple-300' },
+    1:  { bg: 'from-amber-50 to-orange-50',   badge: 'bg-amber-700',   border: 'border-amber-300' },
+    2:  { bg: 'from-stone-50 to-slate-50',    badge: 'bg-stone-600',   border: 'border-stone-300' },
+    3:  { bg: 'from-emerald-50 to-teal-50',   badge: 'bg-emerald-600', border: 'border-emerald-300' },
+    4:  { bg: 'from-blue-50 to-indigo-50',    badge: 'bg-blue-600',    border: 'border-blue-300' },
+    5:  { bg: 'from-purple-50 to-violet-50',  badge: 'bg-purple-600',  border: 'border-purple-300' },
+    6:  { bg: 'from-rose-50 to-pink-50',      badge: 'bg-rose-600',    border: 'border-rose-300' },
+    7:  { bg: 'from-cyan-50 to-sky-50',       badge: 'bg-cyan-600',    border: 'border-cyan-300' },
+    8:  { bg: 'from-lime-50 to-green-50',     badge: 'bg-lime-600',    border: 'border-lime-300' },
+    9:  { bg: 'from-orange-50 to-amber-50',   badge: 'bg-orange-600',  border: 'border-orange-300' },
+    10: { bg: 'from-fuchsia-50 to-purple-50', badge: 'bg-fuchsia-600', border: 'border-fuchsia-300' },
   };
-  const colors = genColors[member.generation] ?? genColors[5];
+  const colors = genColors[member.generation] ?? genColors[10];
 
   return (
     <div className="relative">
@@ -418,11 +423,16 @@ export default function TreeExplorer() {
       {/* Legend */}
       <div className="mt-6 flex flex-wrap gap-3 justify-center">
         {[
-          { gen: 1, label: 'Generasi 1', color: 'bg-amber-700' },
-          { gen: 2, label: 'Generasi 2', color: 'bg-stone-600' },
-          { gen: 3, label: 'Generasi 3', color: 'bg-emerald-600' },
-          { gen: 4, label: 'Generasi 4', color: 'bg-blue-600' },
-          { gen: 5, label: 'Generasi 5+', color: 'bg-purple-600' },
+          { gen: 1,  label: 'Generasi 1',  color: 'bg-amber-700' },
+          { gen: 2,  label: 'Generasi 2',  color: 'bg-stone-600' },
+          { gen: 3,  label: 'Generasi 3',  color: 'bg-emerald-600' },
+          { gen: 4,  label: 'Generasi 4',  color: 'bg-blue-600' },
+          { gen: 5,  label: 'Generasi 5',  color: 'bg-purple-600' },
+          { gen: 6,  label: 'Generasi 6',  color: 'bg-rose-600' },
+          { gen: 7,  label: 'Generasi 7',  color: 'bg-cyan-600' },
+          { gen: 8,  label: 'Generasi 8',  color: 'bg-lime-600' },
+          { gen: 9,  label: 'Generasi 9',  color: 'bg-orange-600' },
+          { gen: 10, label: 'Generasi 10', color: 'bg-fuchsia-600' },
         ].map((l) => (
           <div key={l.gen} className="flex items-center gap-1.5 text-xs text-stone-600">
             <div className={`w-3 h-3 rounded-sm ${l.color}`} />
