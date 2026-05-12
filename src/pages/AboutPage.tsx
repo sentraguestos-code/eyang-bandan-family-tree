@@ -158,11 +158,6 @@ export default function AboutPage() {
           Silaturahmi Keluarga Besar Eyang Bandan agar tetap dijaga dan dilestarikan untuk generasi
           di masa yang akan datang.
         </p>
-        <p className="text-amber-300 text-sm italic">
-          Bogor, 14 Juli 2024
-          <br />
-          <span className="font-medium">Tim Penyusun — Panitia Silaturahmi Akbar Ke-3</span>
-        </p>
       </motion.div>
 
     </div>
