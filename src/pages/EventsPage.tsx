@@ -5,6 +5,7 @@ import {
   AlertCircle, ChevronRight, Search, UserCheck, Trash2, Info,
   Phone, FileText, PartyPopper
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { fetchAllMembers } from '../lib/familyData';
 import type { FamilyMember } from '../types/family';
@@ -704,6 +705,10 @@ export default function EventsPage() {
                         className="flex items-center gap-1.5 px-3 py-2 bg-amber-50 hover:bg-amber-100 text-amber-700 rounded-xl text-xs font-semibold transition-colors border border-amber-200">
                         <Info className="w-3.5 h-3.5" /> Detail
                       </button>
+                      <Link to={`/events/${event.id}/attendees`}
+                        className="flex items-center gap-1.5 px-3 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-xl text-xs font-semibold transition-colors border border-blue-200">
+                        <Users className="w-3.5 h-3.5" /> Peserta
+                      </Link>
                       {event.status !== 'completed' && (
                         <button onClick={() => setRegisterEvent(event)}
                           className="flex items-center gap-1.5 px-3 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded-xl text-xs font-semibold transition-colors border border-emerald-200">

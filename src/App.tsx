@@ -11,6 +11,7 @@ import AboutPage from './pages/AboutPage';
 import GalleryPage from './pages/GalleryPage';
 import PrintPage from './pages/PrintPage';
 import EventsPage from './pages/EventsPage';
+import EventAttendeesPage from './pages/EventAttendeesPage';
 
 function Navigation() {
   const location = useLocation();
@@ -140,6 +141,7 @@ function App() {
             <Route path="/map" element={<FamilyMap />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/events" element={<EventsPage />} />
+            <Route path="/events/:id/attendees" element={<EventAttendeesPage />} />
             <Route path="/print" element={<PrintPage />} />
             <Route path="/add" element={<AddMemberForm />} />
             <Route path="/edit/:id" element={<EditMemberForm />} />
